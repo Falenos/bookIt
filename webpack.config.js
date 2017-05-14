@@ -28,7 +28,6 @@ module.exports = {
       Room: 'app/components/Room.jsx',
       HourSelect: 'app/components/SelectTime/HourSelect.jsx',
       QuarterSelect: 'app/components/SelectTime/QuarterSelect.jsx',
-      PanelsContainer: 'app/components/SelectTime/PanelsContainer.jsx',
       applicationStyles: 'app/styles/app.scss'
     },
     extensions: ['', '.js', '.jsx']

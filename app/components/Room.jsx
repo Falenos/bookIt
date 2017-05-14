@@ -1,7 +1,6 @@
 var React = require('react');
 var HourSelect = require('HourSelect');
 var QuarterSelect = require('QuarterSelect');
-var PanelsContainer = require('PanelsContainer');
 var { Link, IndexLink } = require('react-router');
 
 var Room = React.createClass({
@@ -12,44 +11,32 @@ var Room = React.createClass({
   },
 
   handleHourSelect: function (e) {
-    $(".tabs-title" && ".tabs-panel").removeClass("is-active");
+    $(".tabs-panel").removeClass("is-active");
+    $(".tabs-title").removeClass("is-active");
+    $(".tabs-title a").attr("aria-selected", false);
     $(e.target).parent().addClass("is-active");
+    $(e.target).attr("aria-selected", true);
     var openPanel = this.state.openPanel;
     this.setState(
       { openPanel: e.target.dataset.panel }
     );
     $("#"+e.target.dataset.panel).addClass("is-active");
-    debugger;
   },
 
-  // handleActivePanel: function (e) {
-  //   $(".tabs-title" && ".tabs-panel").removeClass("is-active");
-  //   $(e.target).parent().addClass("is-active");
-  //   var id=e.target.dataset.path;
-  //   $("#"+id).addClass("is-active");
-  // },
-
   render: function () {
+    const hours = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+    const panelList = hours.map((hour) =>
+      <QuarterSelect key={"panel-"+hour} panelId={"panel-"+hour}/>
+    );
+
     return (
       <div>
         <h3>Room Name</h3>
           <HourSelect onClick={this.handleHourSelect} />
         <div className="tabs-content" data-tabs-content="hour-select">
-          <PanelsContainer openPanel={this.state.openPanel}/>
+          {panelList}
         </div>
         <button>Read more</button>
-        {/*<ul className="tabs" data-tabs id="example-tabs">
-          <li className="tabs-title"><IndexLink to="panel1" data-path="panel1" onClick={this.handleActivePanel} >Tab 1</IndexLink></li>
-          <li className="tabs-title"><IndexLink to="panel2" data-path="panel2" onClick={this.handleActivePanel} >Tab 2</IndexLink></li>
-        </ul>
-        <div className="tabs-content" data-tabs-content="example-tabs">
-          <div className="tabs-panel" id="panel1">
-            <p>panel1</p>
-          </div>
-          <div className="tabs-panel" id="panel2">
-            <p>panel2</p>
-          </div>
-        </div>*/}
       </div>
     );
   }

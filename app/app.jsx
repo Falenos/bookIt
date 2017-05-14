@@ -14,7 +14,7 @@ require('style!css!sass!applicationStyles')
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={BookItApp}>
-      <Route path="/panel-7" component={BookItApp}/>
+      <Route path="/panel-7" component={Room}/>
       <Route path="/panel-8" component={Room}/>
       <Route path="/panel-9" component={Room}/>
       <Route path="/panel-10" component={Room}/>
