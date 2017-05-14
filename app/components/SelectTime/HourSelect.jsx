@@ -16,8 +16,8 @@ var HourSelect = React.createClass({
 
   render: function () {
     return (
-      <ul className="tabs" data-tabs id="hour-select" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge="500">
-        <li className="tabs-title is-active"><a data-panel="panel-7" href="#panel-7" onClick={this.props.onClick}>7am</a></li>
+      <ul className="tabs" data-tabs id="hour-select" >
+        <li className="tabs-title"><a data-panel="panel-7" href="#panel-7" onClick={this.props.onClick}>7am</a></li>
         <li className="tabs-title"><a data-panel="panel-8" href="#panel-8" onClick={this.props.onClick}>8am</a></li>
         <li className="tabs-title"><a data-panel="panel-9" href="#panel-9" onClick={this.props.onClick}>9am</a></li>
         <li className="tabs-title"><a data-panel="panel-10" href="#panel-10" onClick={this.props.onClick}>10am</a></li>
