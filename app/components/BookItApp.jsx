@@ -1,5 +1,5 @@
 var React = require('react');
-var RoomData = require('RoomData');
+var roomData = require('roomData');
 var RoomList = require('RoomList');
 
 var BookItApp = React.createClass({

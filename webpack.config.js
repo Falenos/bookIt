@@ -22,7 +22,7 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
-      RoomData: 'app/api/RoomData.jsx',
+      roomData: 'app/api/roomData.jsx',
       BookItApp: 'app/components/BookItApp.jsx',
       RoomList: 'app/components/RoomList.jsx',
       Room: 'app/components/Room.jsx',

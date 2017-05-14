@@ -16,10 +16,12 @@ var Room = React.createClass({
     $(".tabs-title a").attr("aria-selected", false);
     $(e.target).parent().addClass("is-active");
     $(e.target).attr("aria-selected", true);
+
     var openPanel = this.state.openPanel;
     this.setState(
       { openPanel: e.target.dataset.panel }
     );
+
     $("#"+e.target.dataset.panel).addClass("is-active");
   },
 

@@ -1,20 +1,37 @@
 var axios = require('axios');
 
-const ROOM_DATA_URL = 'https://challenges.1aim.com/roombooking/';
+const ROOM_DATA_URL = 'https://challenges.1aim.com/roombooking/getrooms';
 
 module.exports = {
-  // getTemp: function (location) {
-  //   var encodedLocation = encodeURIComponent(location);
-  //   var requestUrl = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}`;
 
-  //   return axios.get(requestUrl).then(function (res) {
-  //     if (res.data.cod && res.data.message) {
-  //       throw new Error(res.data.message);
-  //     } else {
-  //       return res.data.main.temp;
-  //     }
-  //   }, function (res) {
-  //     throw new Error(res.data.message);
-  //   });
-  // }
+
+  // getStuff: function () {
+  //   var requestUrl = 'https://challenges.1aim.com/roombooking/';
+  //   axios.get(requestUrl).then(function (response) {
+  //   debugger;
+  //   resultElement.innerHTML = generateSuccessHTMLOutput(response);
+  //   })
+  //   .catch(function (error) {
+  //   debugger;
+  //   resultElement.innerHTML = generateErrorHTMLOutput(error);
+  //   })
+  // },
+
+  getRooms: function () {
+    debugger;
+    var requestUrl = ROOM_DATA_URL;
+  //   var encodedLocation = encodeURIComponent(location);
+
+    axios.post(requestUrl, {
+    date: "now"
+  })
+  .then(function (response) {
+    debugger;
+    document.innerHTML = generateSuccessHTMLOutput(response);
+  })
+  .catch(function (error) {
+    debugger;
+    document.innerHTML = generateErrorHTMLOutput(error);
+  });
+  }
 }
