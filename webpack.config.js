@@ -22,7 +22,12 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
-      Main: 'app/components/Main.jsx',
+      RoomData: 'app/api/RoomData.jsx',
+      BookItApp: 'app/components/BookItApp.jsx',
+      RoomList: 'app/components/RoomList.jsx',
+      Room: 'app/components/Room.jsx',
+      HourSelect: 'app/components/SelectTime/HourSelect.jsx',
+      QuarterSelect: 'app/components/SelectTime/QuarterSelect.jsx',
       applicationStyles: 'app/styles/app.scss'
     },
     extensions: ['', '.js', '.jsx']
