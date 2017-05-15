@@ -1,26 +1,34 @@
 var React = require('react');
 var Room = require('Room');
-var roomData = require('roomData');
 
 var RoomList = React.createClass({
+
   getDefaultProps: function () {
     return {
-      title: roomData.getRooms()
+      name: ""
     }
-    debugger;
   },
 
-  // getRooms: function () {
-  //   debugger;
-  //   roomData.getStuff();
-  // },
-
   render: function () {
-    // var data = this.getRooms;
-    // debugger;
+    // the data const should be modified so that search and sorting are applied
+
+    // also we need to pass the avail info to the checkboxes so that they can't be controlled if they are booked.
+    const data = this.props.data;
+    const rooms = data.map((room, index) =>
+      <Room
+        key={index}
+        roomName={room.name}
+        location={room.location}
+        equipment={room.equipment}
+        size={room.size}
+        capacity={room.capacity}
+        avail={room.avail}
+        images={room.images}
+      />
+    );
     return (
-      <div>
-        <Room />
+      <div className="rooms-container">
+        {rooms}
       </div>
     );
   }

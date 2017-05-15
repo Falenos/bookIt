@@ -2,6 +2,7 @@ var React = require('react');
 var HourSelect = require('HourSelect');
 var QuarterSelect = require('QuarterSelect');
 var { Link, IndexLink } = require('react-router');
+var roomData = require('roomData');
 
 var Room = React.createClass({
   getInitialState: function () {
@@ -27,13 +28,13 @@ var Room = React.createClass({
 
   render: function () {
     const hours = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
-    const panelList = hours.map((hour) =>
-      <QuarterSelect key={"panel-"+hour} panelId={"panel-"+hour}/>
+    const panelList = hours.map((hour, index) =>
+      <QuarterSelect key={index} panelId={"panel-"+hour}/>
     );
 
     return (
       <div>
-        <h3>Room Name</h3>
+        <h3>{this.props.roomName}</h3>
           <HourSelect onClick={this.handleHourSelect} />
         <div className="tabs-content" data-tabs-content="hour-select">
           {panelList}
