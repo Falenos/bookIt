@@ -5,7 +5,7 @@ var roomData = require('roomData');
 var BookItApp = React.createClass({
   getInitialState: function () {
     return {
-      date: "now",
+      date: "today",
       sorting: "",
       availFilter: false,
       searchTerm: "",
@@ -46,7 +46,7 @@ var BookItApp = React.createClass({
         <header>
           <h1>BookIt</h1><hr/>
           <button type="button" className="hollow button primary prev" onClick={this.handlePrev}>Prev</button>
-          <h2>Today is the day</h2>
+          <h2>{this.state.date} is the day</h2>
           <button type="button" className="hollow button primary next" onClick={this.handleNext}>Next</button>
         </header>
         <section className="Main">

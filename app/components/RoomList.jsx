@@ -3,10 +3,8 @@ var Room = require('Room');
 
 var RoomList = React.createClass({
 
-  getDefaultProps: function () {
-    return {
-      name: ""
-    }
+  handleOrder: function () {
+    console.log("handleOrder is running");
   },
 
   render: function () {
@@ -17,6 +15,7 @@ var RoomList = React.createClass({
     const rooms = data.map((room, index) =>
       <Room
         key={index}
+        roomIndex={index}
         roomName={room.name}
         location={room.location}
         equipment={room.equipment}

@@ -69,7 +69,7 @@ module.exports = {
     },
     {
       name: "worst room",
-      location: "under the tree",
+      location: "into the wild",
       equipment: [
         //list of avaiable equipment
         "fridge"
